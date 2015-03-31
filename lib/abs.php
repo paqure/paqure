@@ -102,8 +102,22 @@ abstract class Vue extends Obj
         $this->typ = 2;
         $this->xml = null;
         $this->tag = $arg['tag'];
-        $this->atr = $arg['atr'];
-        $this->scl = $arg['scl'];
+
+        if(isset($arg['atr'])) {
+
+            $this->atr = $arg['atr'];
+
+        }
+
+        if(isset($arg['scl'])) {
+
+            $this->scl = $arg['scl'];
+
+        } else {
+
+            $this->scl = 0;
+
+        }
 
     } // ./setTag()
 
@@ -164,13 +178,13 @@ abstract class Vue extends Obj
 
             foreach ($this->atr as $key=>$val) {
 
-                $htm .= ' '.$key.'="'.$val.'""';
+                $htm .= ' '.$key.'="'.$val.'"';
 
             }
 
         } // ./if atr
 
-        $htm .= '>';
+        $htm .= '>'.PHP_EOL;
 
         // check for content
         if(isset($this->cnt)) {
