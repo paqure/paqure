@@ -10,7 +10,7 @@
 
 define('PAQURE_ROOT',__DIR__);
 
-$fsi = new DirectoryIterator(SQLAYER_ROOT.'/lib');
+$fsi = new DirectoryIterator(PAQURE_ROOT.'/lib');
 
 foreach ($fsi as $fil) {
 
